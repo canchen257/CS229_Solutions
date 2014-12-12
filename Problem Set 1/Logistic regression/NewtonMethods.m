@@ -22,7 +22,7 @@ for k = 1:iter_time
        gradient = gradient + (Y(i) - sigmoid(X(i,:)*theta))*X(i,:)';
        H = H - sigmoid(X(i,:)*theta).*(1-sigmoid(X(i,:)*theta)).*X(i,:)'*X(i,:);
     end
-    theta = theta - inv(H)*gradient;
+    theta = theta - pinv(H)*gradient;
 end
 
 % Plot training data and the decision boundary fit by logitic regression
